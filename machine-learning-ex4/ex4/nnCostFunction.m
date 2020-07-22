@@ -108,8 +108,8 @@ for t = 1:m
   % 
 end;
 
-Delta1 = Delta1/m;
-Delta2 = Delta2/m;
+Delta1 = (Delta1 + lambda*[zeros(size(Theta1, 1), 1) Theta1(:, 2:end)] )/m;
+Delta2 = (Delta2 + lambda*[zeros(size(Theta2, 1), 1) Theta2(:, 2:end)])/m;
 
 grad = [Delta1(:) ; Delta2(:)];
 
